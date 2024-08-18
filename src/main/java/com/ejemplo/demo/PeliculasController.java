@@ -1,0 +1,29 @@
+package com.ejemplo.demo;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+
+public class PeliculasController {
+    private List<Peliculas> peliculas = new ArrayList<>();
+
+    public PeliculasController(){
+
+        //Inicializar lista
+
+        peliculas.add(new Peliculas(1, "transformers 1", 2007, "Michael Bay", "Ciencia Ficcion - Acción", "Dos razas de robots extraterrestres transformables llegan a la tierra en busca de una misteriosa fuente de poder. En la guerra que estalla entre las dos razas sam witwicky se convierte en la clave de una guerra que puede destruir a la humanidad."));
+        peliculas.add(new Peliculas(2, "La Noche Del Demonio 1", 2010, "James Wan", "Terror sobrenatural", "Josh (Patrick Wilson), su esposa Renai (Rose Byrne) y sus tres hijos acaban de mudarse a una vieja casa. Pero, tras un desgraciado accidente, uno de los niños entra en coma y, al mismo tiempo, empiezan a producirse en la casa extraños fenómenos que aterrorizan a la familia."));
+        peliculas.add(new Peliculas(3, "star Wars", 1977, "George Lucas", "Ciencia Ficción - Acción", "La nave en la que viaja la princesa Leia es capturada por las tropas imperiales al mando del temible Darth Vader. Antes de ser atrapada, Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado de su inseparable C-3PO logran escapar. Tras aterrizar en el planeta Tattooine son capturados y vendidos al joven Luke Skywalker, quien descubrirá el mensaje oculto que va destinado a Obi Wan Kenobi, maestro Jedi a quien Luke debe encontrar para salvar a la princesa."));
+        peliculas.add(new Peliculas(4, "Seño de los Anillos-La comunidad del anillo", 2001, "Peter Jackson", "Aventuras - Fantasia épica", "En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión de destruirlo. Acompañado de sus amigos, Frodo emprende un viaje hacia Mordor, el único lugar donde el anillo puede ser destruido. Sin embargo, Sauron ordena la persecución del grupo para recuperar el anillo y acabar con la Tierra Media.."));
+        peliculas.add(new Peliculas(5, "Volver al futuro", 1985, "Robert Zemeckis", "Ciencia Ficción - aventura - Comedia", "El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido. Después de impedir su primer encuentro, Marty deberá conseguir que se conozcan y se enamoren, de lo contrario su existencia no sería posible."));
+
+    }
+
+    @GetMapping ("/Peliculas")
+        public List<Peliculas> getPeliculas(){
+                return peliculas;
+
+        }    
+}
