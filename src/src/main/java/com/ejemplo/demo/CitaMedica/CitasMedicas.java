@@ -1,4 +1,4 @@
-package com.ejemplo.demo;
+package com.ejemplo.demo.CitaMedica;
 
 import java.time.LocalDateTime;
 
