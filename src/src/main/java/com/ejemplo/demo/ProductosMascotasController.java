@@ -1,15 +1,12 @@
 
 package com.ejemplo.demo;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @Service
 @RestController
@@ -34,16 +31,6 @@ public class ProductosMascotasController {
     @GetMapping ("/productomascotas")
         public List<ProductosMascotas> getProductosMascotas(){
             return productosMascotas;
-        }
-    @GetMapping ("/{idEnvio}/ubicacion")
-            public ResponseEntity<String> getUbicacionActual(@PathVariable String idEnvio){
-                Optional<ProductosMascotas> producto = productosMascotas.stream()
-                        .filter(p -> p.getIdEnvio().equals(idEnvio))
-                        .findFirst();
-        
-                return producto.map(p -> new ResponseEntity<>(p.getUbicacionActual(), HttpStatus.OK))
-                        .orElseGet(() -> new ResponseEntity<>("Producto no encontrado", HttpStatus.NOT_FOUND));
-            
         }
 
   

@@ -1,8 +1,5 @@
 package com.ejemplo.demo;
 
-
-
-
 import java.time.LocalDateTime;
 
 
@@ -18,7 +15,6 @@ public class CitasMedicas {
     private String paciente;    
     private String rutPaciente;
     private String prevision;
-    
 
 
     public CitasMedicas (int idCitas,LocalDateTime horario, String doctor,String especialidad ,String mesCita, String paciente, String rutPaciente,String prevision) {
@@ -34,6 +30,7 @@ public class CitasMedicas {
 
     
     }
+
 
     public int getIdCitas(){
         return idCitas;
